@@ -4,6 +4,7 @@ import { makeStyles } from '@mui/styles';
 import PlayerList from './components/PlayerList';
 import PlayerDetails from './components/PlayerDetails';
 import PlayerForm from './components/PlayerForm';
+import initialPlayers from './data/playersData';
 
 const drawerWidth = 240;
 
@@ -15,14 +16,6 @@ const useStyles = makeStyles((theme) => ({
         marginLeft: drawerWidth,
     },
 }));
-
-const initialPlayers = [
-    { id: 1, firstName: 'Joe', lastName: 'Caputo', contactNumber: '07658312387', gameSession: 'Black Rain' },
-    { id: 2, firstName: 'Piper', lastName: 'Chapman', contactNumber: '07142548798', gameSession: 'Black Rain' },
-    { id: 3, firstName: 'Tasha', lastName: 'Jefferson', contactNumber: '07998987220', gameSession: 'Black Rain' },
-    { id: 4, firstName: 'Gloria', lastName: 'Mendoza', contactNumber: '07512645873', gameSession: 'Black Rain' },
-    { id: 5, firstName: 'Theodore', lastName: 'Bagwell', contactNumber: '07561384896', gameSession: 'One Last Riddle' },
-];
 
 const App = () => {
     const classes = useStyles();
