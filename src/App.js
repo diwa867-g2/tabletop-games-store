@@ -46,7 +46,6 @@ const App = () => {
             setPlayers([...players, { id: nextId, ...newPlayer }]);
             setNextId(nextId + 1);
         } else {
-            // Handle case where player details are incomplete
             alert('Please provide all player details before adding.');
         }
     };
@@ -78,7 +77,7 @@ const App = () => {
             </Drawer>
 
             <div className={classes.content}>
-            {selectedPage === 'PlayerList' && <PlayerList players={players} onPlayerSelect={handlePlayerSelection} onDeletePlayer={deletePlayer} />}
+                {selectedPage === 'PlayerList' && <PlayerList players={players} onPlayerSelect={handlePlayerSelection} onDeletePlayer={deletePlayer} />}
                 {selectedPage === 'PlayerDetails' && (selectedPlayer ? <PlayerDetails player={selectedPlayer} /> : <div>No player profile selected</div>)}
                 {selectedPage === 'PlayerForm' && <PlayerForm onSubmit={addPlayer} />}
             </div>

@@ -47,19 +47,19 @@ const PlayerForm = ({ onSubmit, selectedPlayer }) => {
         let errors = {};
 
         if (!firstName.trim()) {
-            errors.firstName = 'First Name is required';
+            errors.firstName = 'Please enter the First Name';
         }
         
         if (!lastName.trim()) {
-            errors.lastName = 'Last Name is required';
+            errors.lastName = 'Please enter the Last Name';
         }
 
         if (!contactNumber.trim()) {
-            errors.contactNumber = 'Contact Number is required';
+            errors.contactNumber = 'Please enter the Contact Number';
         }
 
         if (!gameSession.trim()) {
-            errors.gameSession = 'Game Session is required';
+            errors.gameSession = 'Please select the Game Session';
         }
 
         setErrors(errors);
