@@ -17,27 +17,6 @@ fields are filled will be able to add player
 Github link - currently pushed changes to the main master branch if required Prod/Staging branch need
 to be created.
 
-# Git commands mostly required/used in this app:
-for initial one time SSH setup:
-ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
-eval "$(ssh-agent -s)"
-ssh-add ~/.ssh/id_rsa
-cat ~/.ssh/id_rsa.pub
-GitHub account settings, navigate to "SSH and GPG keys," and click on "New SSH key."
-ssh -T git@github.com
-git remote set-url origin git@github.com:<username>/<repository>.git
-git config --global user.name "Your Name"
-git config --global user.email "youremail@yourdomain.com"
-git init
-
-Main git commands for regular usage:
-git add <file_name>
-git commit -m "Your commit message here"
-//git log
-git push -u origin master
-
-or can push the changes from VSC without commands based on the neccessity
-
 # Follow-Up Questions
 
 1) How long, in hours, did you spend on the test (not including learning)?
@@ -71,3 +50,24 @@ error handling
 test we’d love to hear them.
 Looks good but it doesnot involve the Backend technologies
 But overall good test.
+
+# Git commands mostly required/used in this app:
+for initial one time SSH setup:
+ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_rsa
+cat ~/.ssh/id_rsa.pub
+GitHub account settings, navigate to "SSH and GPG keys," and click on "New SSH key."
+ssh -T git@github.com
+git remote set-url origin git@github.com:<username>/<repository>.git
+git config --global user.name "Your Name"
+git config --global user.email "youremail@yourdomain.com"
+git init
+
+Main git commands for regular usage:
+git add <file_name>
+git commit -m "Your commit message here"
+//git log
+git push -u origin master
+
+or can push the changes from VSC without commands based on the neccessity
