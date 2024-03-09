@@ -3,16 +3,18 @@
 Install Node.js and npm on your machine.
 Choose a code editor like Visual Studio Code for getting through the code base if required or can
 run from terminal if one just wants to run the application.
---> npm i from main folder
---> npm start from any terminal(VSC)
+1) --> npm i from main folder
+
+2) --> npm start from any terminal(VSC)
+
 Flow-Usage:
-Initial page is entire Player's list and 
-Alex(user) can click on any player row to look unique details
-also can perform delete option by clicking delete at the end of the row
-Filter players based on game session with selection option given
-Currently if navigate directly to player details page no data displayed
-Alex can add a player but the form is validated so only when all the required
-fields are filled will be able to add player
+* Initial page is entire Player's list and 
+* Alex(user) can click on any player row to look unique details
+* also can perform delete option by clicking delete at the end of the row
+* Filter players based on game session with selection option given
+* Currently if navigate directly to player details page no data displayed
+* Alex can add a player but the form is validated so only when all the required
+* fields are filled will be able to add player
 
 Github link - currently pushed changes to the main master branch if required Prod/Staging branch need
 to be created.
