@@ -29,6 +29,7 @@ const App = () => {
     const [selectedPage, setSelectedPage] = useState('PlayerList');
     const [players, setPlayers] = useState(initialPlayers);
     const [selectedPlayer, setSelectedPlayer] = useState(null);
+    const [nextId, setNextId] = useState(initialPlayers.length + 1);
 
     const handlePageChange = (page) => {
         setSelectedPage(page);
@@ -41,7 +42,14 @@ const App = () => {
     };
 
     const addPlayer = (newPlayer) => {
-        setPlayers([...players, { id: players.length + 1, ...newPlayer }]);
+    setPlayers([...players, { id: nextId, ...newPlayer }]);
+    setNextId(nextId + 1);
+};
+
+    const deletePlayer = (playerToDelete) => {
+        const updatedPlayers = players.filter(player => player.id !== playerToDelete.id);
+        setPlayers(updatedPlayers);
+        setSelectedPlayer(null); // Reset selected player after deletion
     };
 
     return (
@@ -65,7 +73,7 @@ const App = () => {
             </Drawer>
 
             <div className={classes.content}>
-                {selectedPage === 'PlayerList' && <PlayerList players={players} onPlayerSelect={handlePlayerSelection} />}
+            {selectedPage === 'PlayerList' && <PlayerList players={players} onPlayerSelect={handlePlayerSelection} onDeletePlayer={deletePlayer} />}
                 {selectedPage === 'PlayerDetails' && (selectedPlayer ? <PlayerDetails player={selectedPlayer} /> : <div>No player profile selected</div>)}
                 {selectedPage === 'PlayerForm' && <PlayerForm onSubmit={addPlayer} />}
             </div>
