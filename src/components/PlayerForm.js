@@ -1,5 +1,5 @@
-import React, { useState,useEffect } from 'react';
-import { TextField, Button, Paper } from '@mui/material';
+import React, { useState, useEffect } from 'react';
+import { TextField, Button, Paper, Typography } from '@mui/material';
 
 const PlayerForm = ({ onSubmit, selectedPlayer }) => {
     const [firstName, setFirstName] = useState('');
@@ -31,10 +31,8 @@ const PlayerForm = ({ onSubmit, selectedPlayer }) => {
     const handleSubmit = (e) => {
         e.preventDefault();
         if (isEditMode) {
-            // Handle edit scenario
             onSubmit({ id: selectedPlayer.id, firstName, lastName, contactNumber, gameSession });
         } else {
-            // Handle add scenario
             onSubmit({ firstName, lastName, contactNumber, gameSession });
             resetForm();
         }
@@ -43,13 +41,14 @@ const PlayerForm = ({ onSubmit, selectedPlayer }) => {
     return (
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
             <Paper elevation={3} style={{ padding: '20px', width: '300px' }}>
+                <Typography variant="h6" style={{ marginBottom: '10px', textAlign: 'center' }}>{isEditMode ? 'Edit Player' : 'Add New Player'}</Typography>
                 <form onSubmit={handleSubmit}>
                     <TextField label="First Name" value={firstName} onChange={(e) => setFirstName(e.target.value)} fullWidth style={{ marginBottom: '10px' }} />
                     <TextField label="Last Name" value={lastName} onChange={(e) => setLastName(e.target.value)} fullWidth style={{ marginBottom: '10px' }} />
                     <TextField label="Contact Number" value={contactNumber} onChange={(e) => setContactNumber(e.target.value)} fullWidth style={{ marginBottom: '10px' }} />
                     <TextField label="Game Session" value={gameSession} onChange={(e) => setGameSession(e.target.value)} fullWidth style={{ marginBottom: '10px' }} />
-                    <Button type="submit" variant="contained" color="primary">
-                        {isEditMode ? 'Edit Player' : 'Add Player'}
+                    <Button type="submit" variant="contained" color="primary" fullWidth>
+                        {isEditMode ? 'Save Changes' : 'Add Player'}
                     </Button>
                 </form>
             </Paper>

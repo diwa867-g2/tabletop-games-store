@@ -42,9 +42,14 @@ const App = () => {
     };
 
     const addPlayer = (newPlayer) => {
-    setPlayers([...players, { id: nextId, ...newPlayer }]);
-    setNextId(nextId + 1);
-};
+        if (newPlayer.firstName && newPlayer.lastName && newPlayer.contactNumber && newPlayer.gameSession) {
+            setPlayers([...players, { id: nextId, ...newPlayer }]);
+            setNextId(nextId + 1);
+        } else {
+            // Handle case where player details are incomplete
+            alert('Please provide all player details before adding.');
+        }
+    };
 
     const deletePlayer = (playerToDelete) => {
         const updatedPlayers = players.filter(player => player.id !== playerToDelete.id);
