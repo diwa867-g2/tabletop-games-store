@@ -16,7 +16,8 @@ Flow-Usage:
 * Alex can add a player but the form is validated so only when all the required
 * fields are filled will be able to add player
 
-Github link - currently pushed changes to the main master branch if required Prod/Staging branch need
+Github link - https://github.com/diwa867-g2/tabletop-games-store/tree/master
+currently pushed changes to the main master branch if required Prod/Staging branch need
 to be created.
 
 # Follow-Up Questions
